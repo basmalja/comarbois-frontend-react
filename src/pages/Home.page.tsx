@@ -83,17 +83,15 @@ export default function DataPage() {
         breakpoint: "sm",
         collapsed: { mobile: !opened },
       }}
-      header={{ height: 60 }}
+      header={{ height: 100 }}
       padding="md"
     >
       {/* Header */}
-      <AppShell.Header className="bg-gray-900 text-white">
-        <Group h="100%" px="md" className="justify-between">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          <Title order={2} className="text-black">
-            Data Management
-          </Title>
-        </Group>
+      <AppShell.Header className="bg-gray-900 text-white flex items-center">
+        <img src="src/comarbois_logo.png" alt="Comarbois Logo" className="w-40 h-20 mr-4" />
+        <Title order={2} className="text-black text-center flex-grow">
+          Articles Management
+        </Title>
       </AppShell.Header>
 
       {/* Sidebar */}
@@ -134,9 +132,12 @@ export default function DataPage() {
                   <Table.Td>{row.unite}</Table.Td>
                   <Table.Td>{row.stock}</Table.Td>
                   <Table.Td>
-                    <Button size="xs" color="red">
-                      Delete
-                    </Button>
+                  <Button size="xs" color="blue" className="mr-2">
+                      modifier
+                  </Button>
+                  <Button size="xs" color="blue" className="mr-2">
+                      dupliquer
+                  </Button>
                   </Table.Td>
                 </Table.Tr>
               ))}
